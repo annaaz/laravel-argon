@@ -62,6 +62,7 @@
                     <div style="text-align: center">
                         <h4 style="font-weight: bold">INFORMASI KERJASAMA DALAM NEGRI</h4>
                     </div>
+
                 <hr class="horizontal dark">
                 <form method="GET" action="{{route('informasi-kerjasama')}}" style="color: #0a0c0d">
                     <div class="row mb-1">
