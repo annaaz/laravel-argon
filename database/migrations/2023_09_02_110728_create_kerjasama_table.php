@@ -15,19 +15,22 @@ return new class extends Migration
     {
         Schema::create('kerjasama', function (Blueprint $table) {
             $table->id();
-            $table->string('instansi')->nullable();
-            $table->string('nama_kerjasama')->nullable();
-            $table->string('no_kerjasama')->nullable();
-            $table->string('kategori')->nullable();
-            $table->string('mitra')->nullable();
-            $table->string('jenis')->nullable();
-            $table->string('tempat')->nullable();
-            $table->date('tanggal')->nullable();
-            $table->date('berlaku')->nullable();
-            $table->string('status')->nullable();
-            $table->date('tanggal_berakhir')->nullable();
-            $table->string('filepath')->nullable();
+            $table->string('instansi');
+            $table->string('nama_kerjasama');
+            $table->string('no_kerjasama_pihak_pertama');
+            $table->string('kategori');
+            $table->string('mitra');
+            $table->string('jenis');
+            $table->string('tempat');
+            $table->date('tanggal');
+            $table->integer('tahun_ttd');
+            $table->string('status');
+            $table->integer('tahun_berakhir');
+            $table->string('file')->nullable();
             $table->timestamps();
+            $table->string('link')->nullable();
+            $table->string('bidang_kerjasama')->nullable();
+            $table->string('no_kerjasama_pihak_kedua')->nullable();
         });
     }
 
