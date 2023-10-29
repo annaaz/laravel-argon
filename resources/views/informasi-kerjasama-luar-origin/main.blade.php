@@ -9,15 +9,6 @@
             -moz-box-shadow: 1px 5px 12px 2px rgba(232,120,120,0.75);
         }
     </style>
-
-    <script>
-        function resetSelects() {
-            var selectElements = document.querySelectorAll('select'); // Get all <select> elements
-            for (var i = 0; i < selectElements.length; i++) {
-                selectElements[i].selectedIndex = 0; // Set the selected index to the first option (default value)
-            }
-        }
-    </script>
     <div style="display: flex;align-items: center;justify-content:center;margin-top:140px;gap:10px;padding: 20px">
         <div style="width: 80vw; display: flex;justify-content: center;flex-direction:column;align-items: center">
         <h4 style="font-weight: bold">INFORMASI KERJASAMA</h4>
@@ -28,18 +19,19 @@
             </div>
         </div>
     </div>
+
     <div style="display: flex; justify-content: center;padding: 30px;gap:20px">
         <a class="nav-link me-2 font-weight-bold" style="color: white !important;" href="{{ route('informasi-statistik') }}">
             <div class="boxes" style="background-color:#990000; color:white !important;width: 280px;min-height: 300px;display: flex; justify-content: center; flex-direction: column;align-items: center;text-align: center;padding: 10px;cursor: pointer">
                 <h5 style="color: white !important;">Statistic</h5>
                 <div style="margin: 10px; background-color: white;padding: 10px;">
-                <img src="{{ asset('img/stats.jpg') }}" width="180" alt="Example Image">
+                    <img src="{{ asset('img/stats.jpg') }}" width="180" alt="Example Image">
                 </div>
                 <h6 style="color: white !important;">Tampilan data statistik</h6><p>Di sini Anda dapat melihat daftar statistik dalam diagram batang/grafik</p>
             </div>
         </a>
         <a class="nav-link me-2 font-weight-bold" style="color: white !important;" href="{{ route('informasi-kerjasama') }}">
-            <div class="boxes" style="background-color:#8a8a97; color:white !important;;width: 280px;min-height: 300px;display: flex; justify-content: center; flex-direction: column;align-items: center;text-align: center;padding: 10px;cursor: pointer">
+            <div class="boxes" style="background-color:#990000; color:white !important;;width: 280px;min-height: 300px;display: flex; justify-content: center; flex-direction: column;align-items: center;text-align: center;padding: 10px;cursor: pointer">
                 <h5 style="color: white !important;">Kerjasama Dalam Negri</h5>
                 <div style="margin: 10px; background-color: white;padding: 10px;">
                     <img src="{{ asset('img/kerjasama-dalam-negri.jpg') }}" width="180" alt="Example Image">
@@ -48,7 +40,7 @@
             </div>
         </a>
         <a class="nav-link me-2 font-weight-bold" style="color: white !important;" href="{{ route('informasi-kerjasama-luar') }}">
-            <div class="boxes" style="background-color:#990000; color:white !important;;width: 280px;min-height: 300px;display: flex; justify-content: center; flex-direction: column;align-items: center;text-align: center;padding: 10px;cursor: pointer">
+            <div class="boxes" style="background-color:#8a8a97; color:white !important;;width: 280px;min-height: 300px;display: flex; justify-content: center; flex-direction: column;align-items: center;text-align: center;padding: 10px;cursor: pointer">
                 <h5 style="color: white !important;">Kerjasama Luar Negri</h5>
                 <div style="margin: 10px; background-color: white;padding: 10px;">
                     <img src="{{ asset('img/kerjasama-luar-negri.jpg') }}" width="180" alt="Example Image">
@@ -60,11 +52,10 @@
     <div style="padding: 10px; display: flex;flex-direction: column;align-items: center; min-width: 80vw;">
             <div class="card-header text-xs" style="min-width: 78vw">
                     <div style="text-align: center">
-                        <h4 style="font-weight: bold">INFORMASI KERJASAMA DALAM NEGRI</h4>
+                        <h4 style="font-weight: bold">INFORMASI KERJASAMA LUAR  NEGRI</h4>
                     </div>
-
                 <hr class="horizontal dark">
-                <form method="GET" action="{{route('informasi-kerjasama')}}" style="color: #0a0c0d">
+                <form method="GET" action="{{route('kerjasama')}}">
                     <div class="row mb-1">
                         <div class="col-md-1 pt-2">Instansi</div>
                         <div class="col-md-3">
@@ -106,18 +97,16 @@
                         <div class="col-md-1 pt-2">Tahun TTD</div>
                         <div class="col-md-2">
                             <select name="tahun_ttd" class="form-control text-xs">
-                                <option value="">All</option>
-                                @for ($i = date('Y'); $i >= (date('Y') - 30); $i--)
-                                    <option value="{{ $i }}" {{ isset($_GET['tahun_ttd']) && $_GET['tahun_ttd'] == $i ? 'selected' : '' }}>{{ $i }}</option>
+                                @for ($i = date('Y'); $i >= (date('Y') - 10); $i--)
+                                    <option value="{{ $i }}" {{ isset($_GET['tahun_ttd']) && $_GET['tahun_ttd'] == $item->kode ? 'selected' : '' }}>{{ $i }}</option>
                                 @endfor
                             </select>
                         </div>
                         <div class="col-md-1 pt-1">Tahun Berakhir</div>
                         <div class="col-md-2">
                             <select name="tahun_berakhir" class="form-control text-xs">
-                                <option value="">All</option>
-                                @for ($i = date('Y'); $i >= (date('Y') - 30); $i--)
-                                    <option value="{{ $i }}" {{ isset($_GET['tahun_berakhir']) && $_GET['tahun_berakhir'] == $i ? 'selected' : '' }}>{{ $i }}</option>
+                                @for ($i = date('Y'); $i >= (date('Y') - 10); $i--)
+                                    <option value="{{ $i }}" {{ isset($_GET['tahun_berakhir']) && $_GET['tahun_berakhir'] == $item->kode ? 'selected' : '' }}>{{ $i }}</option>
                                 @endfor
                             </select>
                         </div>
@@ -133,70 +122,63 @@
                 </form>
             </div>
     </div>
-    <div style="padding: 10px; display: flex;flex-direction: column;align-items: center; min-width: 85vw;">
-        <div class="row" style=" max-width: 85vw;color: #0a0c0d">
+    <div style="padding: 10px; display: flex;flex-direction: column;align-items: center; min-width: 90vw;">
+        <div class="row" style=" max-width: 90vw" >
         <div class="col-12">
             <div class="card mb-4">
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-3">
-                        <table style="min-width: 82vw;border-collapse: collapse; border: none" cellspacing="5" cellpadding="5" class="align-items-center mb-0">
-                            <thead style="background-color:#f2f2f2;border-bottom: 1px solid lightgrey; ">
+                        <table style=";border-collapse: collapse; border: none" cellspacing="5" cellpadding="5" style="width: 100%" class="align-items-center mb-0">
+                            <thead style="background-color:#f2f2f2;border-bottom: 1px solid lightgrey">
                             <tr>
-                                <th rowspan="2" class="text-uppercase  text-xxs text-center text-black">
+                                <th rowspan="2" class="text-uppercase  text-secondary text-xxs text-center">
                                     No</th>
-                                <th rowspan="2" class="text-uppercase text-xxs font-weight-bolder">
+                                <th rowspan="2" class="text-uppercase text-secondary text-xxs font-weight-bolder">
                                     Instansi</th>
-                                <th rowspan="2" class="text-uppercase text-xxs font-weight-bolder ps-2">
+                                <th rowspan="2" class="text-uppercase text-secondary text-xxs font-weight-bolder ps-2">
                                     Nomor Kerjasama</th>
                                 <th rowspan="2"
-                                    class="text-center text-uppercase text-xxs font-weight-bolder">
+                                    class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">
                                     Nama Kerjasama</th>
                                 <th rowspan="2"
-                                    class="text-center text-uppercase text-xxs font-weight-bolder">
+                                    class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">
                                     Mitra</th>
                                 <th rowspan="2"
-                                    class="text-center text-uppercase text-xxs font-weight-bolder">
+                                    class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">
                                     Bidang Fokus</th>
-                                <th class="text-uppercase text-xxs font-weight-bolder">
-                                    Jenis Kerjasama</th>
-                                <th class="text-uppercase text-xxs font-weight-bolder">
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder">
+                                    Kategori</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder">
                                     Tempat</th>
-                                <th class="text-uppercase text-xxs font-weight-bolder">
-                                    Tahun TTD</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder">
+                                    Berlaku</th>
                                 <th
-                                    class="text-center text-uppercase text-xxs font-weight-bolder">
-                                </th>
-                                <th rowspan="2"
-                                    class="text-center text-uppercase text-xxs font-weight-bolder">
-                                    Press Release</th>
-
+                                    class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">
+                                    Tanggal Berlaku</th>
                             </tr>
                             <tr>
-                                <th class="text-uppercase text-xxs font-weight-bolder ">
-                                    Status</th>
-                                <th class="text-uppercase text-xxs font-weight-bolder ">
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder ">
+                                    Jenis</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder ">
                                     Tanggal</th>
-                                <th class="text-uppercase text-xxs font-weight-bolder ">
-                                    Tahun Berakhir</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder ">
+                                    Status</th>
                                 <th
-                                    class="text-center text-uppercase text-xxs font-weight-bolder ">
-                                    File Dokumen</th>
+                                    class="text-center text-uppercase text-secondary text-xxs font-weight-bolder ">
+                                    Press Release</th>
                             </tr>
                             </thead>
-
                             <tbody class="text-xs">
                             @foreach($data as $key => $value)
                                 <tr style="border-bottom: 1px solid lightgrey">
                                     <td>{{$key+1}}</td>
-                                    <td style="font-weight: 530">
+                                    <td>
                                         {{$value->instansi}}
                                     </td>
                                     <td>
-                                        Pihak I : {{$value->no_kerjasama_pihak_pertama}}
-                                        <br />
-                                        Pihak II : {{$value->no_kerjasama_pihak_kedua}}
+                                        {{$value->no_kerjasama}}
                                     </td>
-                                    <td style="font-weight: 530">
+                                    <td>
                                         {{$value->nama_kerjasama}}
                                     </td>
                                     <td>
@@ -206,46 +188,29 @@
                                         {{$list_bidang_kerjasama[$value->bidang_kerjasama]}}
                                     </td>
                                     <td>
+                                        {{$value->kategori}}
+                                        <hr class="horizontal dark">
                                         {{$list_jenis_kerjasama[$value->jenis]}}
-                                        <br />
-                                        {{$list_status[$value->status]}}
                                     </td>
                                     <td>
                                         {{$value->tempat}}
                                         <hr class="horizontal dark">
                                         {{ \Carbon\Carbon::parse($value->tanggal)->format('d F Y') }}
-
                                     </td>
                                     <td>
-                                        {{$value->tahun_ttd}}
+                                        {{$list_status[$value->status]}}
                                         <hr class="horizontal dark">
-                                        {{$value->tahun_berakhir}}
-
+                                        {{ \Carbon\Carbon::parse($value->berlaku)->format('d F Y') }}
                                     </td>
-                                    <td>
-                                        @php
-                                            $filePath = $value->file; // Replace with the actual file path
-                                        @endphp
-                                        @if ($filePath && Storage::disk('public')->exists($filePath))
-                                            <a href="{{ asset('storage/'.$value->file) }}" style="font-weight: bold" target="_blank">
-                                                <i class="ni ni-folder-17 text-dark text-sm opacity-10"></i>
-                                                File</a>
-                                        @else
-                                            <small>[ Tidak ada Dokumen ] </small>
-                                        @endif
-                                    </td>
-
                                     <td style="text-align: center">
-                                        @if (!empty($value->link))
-                                            <a href="{{ $value->link }}" target="_blank">Link {{ $value->link }}</a>
-                                        @endif
+                                        <a href="{{$value->link}}" target="_blank">Link</a>
                                     </td>
-
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
                         <br />
+
                     </div>
                 </div>
                 <div class="card-header pb-0">
@@ -258,5 +223,4 @@
 
     @include('layouts.footers.guest.footer')
 @endsection
-
 

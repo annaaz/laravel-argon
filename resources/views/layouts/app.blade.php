@@ -28,7 +28,7 @@
     @endguest
 
     @auth
-        @if (in_array(request()->route()->getName(), ['profile','informasi-statistik','informasi-kerjasama','informasi-kerjasama-luar-origin','sign-in-static', 'sign-up-static', 'login', 'register', 'recover-password', 'rtl', 'virtual-reality']))
+        @if (in_array(request()->route()->getName(), ['profile','informasi-statistik','informasi-kerjasama','informasi-kerjasama-luar','sign-in-static', 'sign-up-static', 'login', 'register', 'recover-password', 'rtl', 'virtual-reality']))
             @yield('content')
         @else
             @if (!in_array(request()->route()->getName(), ['profile', 'profile-static']))

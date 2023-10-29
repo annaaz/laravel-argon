@@ -37,7 +37,7 @@ use App\Http\Controllers\ChangePassword;
     Route::get('/', function () {return redirect('/profile');});
     Route::get('/profile', [ProfileController::class, 'create'])->name('profile');
     Route::get('/informasi-kerjasama', [InformasiKerjasamaController::class, 'create'])->name('informasi-kerjasama');
-    Route::get('/informasi-kerjasama-luar-origin', [InformasiKerjasamaLuarController::class, 'create'])->name('informasi-kerjasama-luar-origin');
+    Route::get('/informasi-kerjasama-luar', [InformasiKerjasamaLuarController::class, 'create'])->name('informasi-kerjasama-luar');
     Route::get('/informasi-statistik', [InformasiStatistikController::class, 'create'])->name('informasi-statistik');
 
     Route::get('/login', [LoginController::class, 'show'])->middleware('guest')->name('login');

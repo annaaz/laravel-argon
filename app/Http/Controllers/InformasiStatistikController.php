@@ -34,28 +34,21 @@ class InformasiStatistikController extends Controller
 
     public function create(Request $request)
     {
-
-        //kategori luar-dalam negeri
         $kategoriKerjasama = Kerjasama::select('kategori')
             ->selectRaw('COUNT(*) as total_kategori')
             ->groupBy('kategori')
             ->get();
-
         $data_kategori = []; // Initialize the array
-
         foreach ($kategoriKerjasama as $kategoriGroup) {
             $data_kategori[$kategoriGroup->kategori]['total'] = $kategoriGroup->total_kategori;
         }
-
         //kerjasama data perbulan
         $year = Carbon::now()->year; // Get the current year
-
         $dataMonthlyLN = Kerjasama::select(DB::raw('MONTH(tanggal) as month'), DB::raw('COUNT(*) as count'))
             ->where('kategori','LN')
             ->groupBy('month')
             ->orderBy('month')
             ->get();
-
         $data_monthly_LN = [];
         foreach ($dataMonthlyLN as $month) {
             $data_monthly_LN[$month->month] = $month->count;
@@ -64,13 +57,11 @@ class InformasiStatistikController extends Controller
             $allmonth_LN[$i] =  isset($data_monthly_LN[$i])?$data_monthly_LN[$i]:0;
         }
         $implode_arr_allmonth_LN = implode(',',$allmonth_LN);
-
         $dataMonthlyDN = Kerjasama::select(DB::raw('MONTH(tanggal) as month'), DB::raw('COUNT(*) as count'))
             ->where('kategori','DN')
             ->groupBy('month')
             ->orderBy('month')
             ->get();
-
         $data_monthly_DN = [];
         foreach ($dataMonthlyDN as $month) {
             $data_monthly_DN[$month->month] = $month->count;
@@ -80,50 +71,26 @@ class InformasiStatistikController extends Controller
         }
         $implode_arr_allmonth_DN = implode(',',$allmonth_DN);
 
-//        //mitra kerjasama
-//            $dataGroupByMitra = Kerjasama::select('mitra')
-//                ->selectRaw('COUNT(*) as total')
-//                ->groupBy('mitra')
-//                ->orderBy('total','desc')
-//                ->limit(15)
-//                ->get();
-//
-//        $data_mitra_all = []; // Initialize the array
-//        foreach ($dataGroupByMitra as $mitraGroup) {
-//            $data_mitra_all[$mitraGroup->mitra] = $mitraGroup->total;
-//        }
-//
-//        $quotedValues = array_map(function($value) {
-//            return "'" . $value . "'";
-//        }, array_keys($dataGroupByMitra));
-//
-//        $label_mitra = implode(', ', $quotedValues);
-//        $value_mitra = implode(', ', array_values($dataGroupByMitra));
-
-        $mitraList = Kerjasama::select('mitra')
-            ->groupBy('mitra')
+        $mitraList = Kerjasama::select('instansi')
+            ->groupBy('instansi')
             ->orderByRaw('COUNT(*) ASC')
             ->limit(15)
-            ->pluck('mitra'); // Get the list of unique mitra values
-
+            ->pluck('instansi'); // Get the list of unique mitra values
         $dataGroupedByMitra = [];
-        foreach ($mitraList as $mitra) {
+        foreach ($mitraList as $instansi) {
             $nestedGroup = Kerjasama::select('status')
                 ->selectRaw('COUNT(*) as total')
-                ->where('mitra', $mitra) // Filter by mitra
+                ->where('instansi', $instansi) // Filter by mitra
                 ->groupBy('status')
                 ->orderBy('total', 'desc')
                 ->get()
                 ->toArray();
-            $dataGroupedByMitra[$mitra] = $nestedGroup;
+            $dataGroupedByMitra[$instansi] = $nestedGroup;
         }
-
         $quotedValues = array_map(function($value) {
             return "'" . $value . "'";
         }, array_keys($dataGroupedByMitra));
-
         $label_mitra = implode(', ', $quotedValues);
-
         foreach ($dataGroupedByMitra as $key => $value) {
             $newArray[$key] = [];
             foreach ($value as $item) {
@@ -136,15 +103,16 @@ class InformasiStatistikController extends Controller
             $arr_baru[$k] = isset($value['br'])?$value['br']:0;
             $k++;
         }
-
+        $kerjasama_data_baru = implode(', ', $arr_baru);
         $kl=0;
         $arr_lama = [];
         foreach ($newArray as $key => $value) {
-            $arr_lama[$kl] = isset($value['lm'])?$value['lm']:0;
+            $arr_lama[$kl] = isset($value['lj'])?$value['lj']:0;
             $kl++;
         }
+        $kerjasama_data_lama = implode(', ', $arr_lama);
 
-        return view('informasi-statistik.main', compact('data_kategori','implode_arr_allmonth_LN','implode_arr_allmonth_DN','label_mitra'));
+        return view('informasi-statistik.main', compact('kerjasama_data_baru','kerjasama_data_lama','data_kategori','implode_arr_allmonth_LN','implode_arr_allmonth_DN','label_mitra'));
     }
 
     public function store()

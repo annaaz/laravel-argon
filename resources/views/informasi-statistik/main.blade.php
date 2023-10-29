@@ -38,7 +38,7 @@
                 <h6 style="color: white !important;">List data kerjasama dalam negri</h6><p>Di sini Anda dapat melihat daftar data dalam list tabel </p>
             </div>
         </a>
-        <a class="nav-link me-2 font-weight-bold" style="color: white !important;" href="{{ route('informasi-kerjasama-luar-origin') }}">
+        <a class="nav-link me-2 font-weight-bold" style="color: white !important;" href="{{ route('informasi-kerjasama-luar') }}">
             <div class="boxes" style="background-color:#990000; color:white !important;;width: 280px;min-height: 300px;display: flex; justify-content: center; flex-direction: column;align-items: center;text-align: center;padding: 10px;cursor: pointer">
                 <h5 style="color: white !important;">Kerjasama Luar Negri</h5>
                 <div style="margin: 10px; background-color: white;padding: 10px;">
@@ -550,13 +550,13 @@
             datasets: [
                 {
                     label: 'Kerjasama Baru',
-                    data: [30,40,50,23,45,10,2],
+                    data: [{{$kerjasama_data_baru}}],
                     borderColor:'#d13030',
                     backgroundColor:'#d13030',
                 },
                 {
                     label: 'Kerjasama Lanjutan',
-                    data: [10,20,10,50,45,5,20],
+                    data: [{{$kerjasama_data_lama}}],
                     borderColor: '#3080d0',
                     backgroundColor: '#3080d0',
                 }

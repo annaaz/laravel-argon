@@ -41,6 +41,19 @@ class InformasiKerjasamaLuarController extends Controller
         if ($request->filled('bidang_fokus')) {
             $query->where('bidang_kerjasama', 'like', '%' . $request->input('bidang_fokus') . '%');
         }
+        if ($request->filled('tahun_ttd')) {
+            $query->where('tahun_ttd', 'like', '%' . $request->input('tahun_ttd') . '%');
+        }
+        if ($request->filled('tahun_berakhir')) {
+            $query->where('tahun_berakhir', 'like', '%' . $request->input('tahun_berakhir') . '%');
+        }
+        if ($request->filled('jenis')) {
+            $query->where('jenis', 'like', '%' . $request->input('jenis') . '%');
+        }
+        if ($request->filled('status')) {
+            $query->where('status', 'like', '%' . $request->input('status') . '%');
+        }
+
         $data = $query->paginate(5);
         $bidang_kerjasama = $this->bidang_kerjasama;
         $jenis_kerjasama = $this->jenis_kerjasama;
@@ -48,7 +61,7 @@ class InformasiKerjasamaLuarController extends Controller
         $list_bidang_kerjasama = $this->reformat_arr($bidang_kerjasama);
         $list_jenis_kerjasama = $this->reformat_arr($jenis_kerjasama);
         $list_status = $this->reformat_arr($status);
-        return view('informasi-kerjasama-luar-origin.main', compact('data','bidang_kerjasama','jenis_kerjasama','status','list_bidang_kerjasama','list_jenis_kerjasama','list_status'));
+        return view('informasi-kerjasama-luar.main', compact('data','bidang_kerjasama','jenis_kerjasama','status','list_bidang_kerjasama','list_jenis_kerjasama','list_status'));
     }
 
     public function store()

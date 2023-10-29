@@ -64,25 +64,7 @@ class DashboardController extends Controller
             $allmonth_DN[$i] =  isset($data_monthly_DN[$i])?$data_monthly_DN[$i]:0;
         }
         $implode_arr_allmonth_DN = implode(',',$allmonth_DN);
-//        //mitra kerjasama
-//            $dataGroupByMitra = Kerjasama::select('mitra')
-//                ->selectRaw('COUNT(*) as total')
-//                ->groupBy('mitra')
-//                ->orderBy('total','desc')
-//                ->limit(15)
-//                ->get();
-//
-//        $data_mitra_all = []; // Initialize the array
-//        foreach ($dataGroupByMitra as $mitraGroup) {
-//            $data_mitra_all[$mitraGroup->mitra] = $mitraGroup->total;
-//        }
-//
-//        $quotedValues = array_map(function($value) {
-//            return "'" . $value . "'";
-//        }, array_keys($dataGroupByMitra));
-//
-//        $label_mitra = implode(', ', $quotedValues);
-//        $value_mitra = implode(', ', array_values($dataGroupByMitra));
+        
         $mitraList = Kerjasama::select('instansi')
             ->groupBy('instansi')
             ->orderByRaw('COUNT(*) ASC')
