@@ -11,10 +11,14 @@
     </style>
     <div style="display: flex;align-items: center;justify-content:center;margin-top:130px;gap:10px;">
         <div>
-            <img src="{{ asset('img/mainRight.jpg') }}" width="650" height="370" alt="Example Image">
+            <picture>
+            <img src="{{ asset('img/mainRight.webp') }}" width="650" height="370" alt="Example Image" loading="lazy">
+            </picture>
         </div>
         <div>
-            <img src="{{ asset('img/mainLeft.jpg') }}" width="650" height="370" alt="Example Image">
+            <picture>
+            <img src="{{ asset('img/mainLeft.webp') }}" width="650" height="370" alt="Example Image" loading="lazy">
+            </picture>
         </div>
     </div>
     <div style="display: flex;align-items: center;justify-content:center;margin-top:40px;gap:10px;padding: 20px">
