@@ -5,6 +5,7 @@
         Kawasan IPSC Sentul, Bogor, Jawa Barat<br /><br />
         KONTAK INFO <br /><br /><br />
             <small>
+            No Telp : +6221-87951555 / 87954555  <br />
             Email : kerma@idu.ac.id <br />
             Call Center : 6221-87951555/87954555 <br />
             </small>

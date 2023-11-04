@@ -10,12 +10,18 @@
                             <li class="nav-item">
                                 <a class="nav-link d-flex align-items-center me-2 active font-weight-bold" style="color: white !important;" aria-current="page"
                                    href="{{ route('profile') }}">
-                                    PROFILE
+                                    BERANDA
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex align-items-center me-2 active font-weight-bold" style="color: white !important;" aria-current="page"
+                                   href="{{ route('profile') }}">
+                                    PROFIL
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link me-2 font-weight-bold" style="color: white !important;" href="{{ route('profile') }}">
-                                    PROCEDURE
+                                    PROSEDUR
                                 </a>
                             </li>
                         </ul>
@@ -30,7 +36,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link me-2 font-weight-bold" style="color: white !important;"  href="{{ route('informasi-statistik') }}">
-                                    STATISTICS
+                                    STATISTIK
                                 </a>
                             </li>
                             <li class="nav-item">
