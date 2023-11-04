@@ -17,7 +17,9 @@
         </div>
         <div>
             <picture>
-            <img src="{{ asset('img/mainLeft.webp') }}" width="650" height="370" alt="Example Image" loading="lazy">
+                <div style="width: 650px; height: 370px; overflow: hidden" >
+                    <img src="{{ asset('img/main-unhan.webp') }}" width="650" height="420" alt="Example Image" loading="lazy">
+                </div>
             </picture>
         </div>
     </div>
