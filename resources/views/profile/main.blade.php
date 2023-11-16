@@ -12,10 +12,10 @@
     <div style="display: flex;align-items: center;justify-content:center;margin-top:130px;gap:10px;">
         <h3 style="font-weight: bold">PROFIL</h3>
     </div>
-    <div style="display: flex;align-items: center;justify-content:center;margin-top:40px;gap:10px;padding: 10px;margin-bottom: 50px;">
+    <div style="display: flex;align-items: center;justify-content:center;margin-top:1@endif;gap:10px;padding: 10px;margin-bottom: 50px;">
         <div style="width: 80vw; display: flex;justify-content: center;flex-direction:column;align-items: center">
-            <div class="img wrapp " style="width: 850px; height: 520px; overflow: hidden">
-                <img src="{{ asset('img/profil-unhan.png') }}" width="850" height="520" alt="Example Image" loading="lazy" >
+            <div class="img wrapp " style="width: 750px; height: 420px; overflow: hidden">
+                <img src="{{ asset('img/profil-unhan.png') }}" width="750" height="420" alt="Example Image" loading="lazy" >
             </div>
             <div style="width: 78vw;margin-top: 10px;font-size: 15px;">
                 <br /><br />
