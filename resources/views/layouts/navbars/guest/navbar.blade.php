@@ -9,7 +9,7 @@
                         <ul class="navbar-nav mx-auto">
                             <li class="nav-item">
                                 <a class="nav-link d-flex align-items-center me-2 active font-weight-bold" style="color: white !important;" aria-current="page"
-                                   href="{{ route('profile') }}">
+                                   href="{{ route('beranda') }}">
                                     BERANDA
                                 </a>
                             </li>
@@ -20,7 +20,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link me-2 font-weight-bold" style="color: white !important;" href="{{ route('profile') }}">
+                                <a class="nav-link me-2 font-weight-bold" style="color: white !important;" href="{{ route('prosedur') }}">
                                     PROSEDUR
                                 </a>
                             </li>

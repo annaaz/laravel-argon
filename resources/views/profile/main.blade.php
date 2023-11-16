@@ -10,58 +10,31 @@
         }
     </style>
     <div style="display: flex;align-items: center;justify-content:center;margin-top:130px;gap:10px;">
-        <div>
-            <picture>
-            <img src="{{ asset('img/mainRight.webp') }}" width="650" height="370" alt="Example Image" loading="lazy">
-            </picture>
-        </div>
-        <div>
-            <picture>
-                <div style="width: 650px; height: 370px; overflow: hidden" >
-                    <img src="{{ asset('img/main-unhan.webp') }}" width="650" height="420" alt="Example Image" loading="lazy">
-                </div>
-            </picture>
-        </div>
+        <h3 style="font-weight: bold">PROFIL</h3>
     </div>
-    <div style="display: flex;align-items: center;justify-content:center;margin-top:40px;gap:10px;padding: 20px">
+    <div style="display: flex;align-items: center;justify-content:center;margin-top:40px;gap:10px;padding: 10px;margin-bottom: 50px;">
         <div style="width: 80vw; display: flex;justify-content: center;flex-direction:column;align-items: center">
-        <h3 style="font-weight: bold">SISMA</h3>
-            <div style="width: 70vw;margin-top: 10px">
-                <p style="font-size: 20px;text-align: center">
-                    SISMA merupakan sistem informasi kerjasama, yang berfungsi sebagai pusat informasi, komunikasi,
-                    dan proses pengusulan yang berkaitan dengan kerjasama baik itu kerjasama luar negeri maupun dalam negeri </p>
+            <div class="img wrapp " style="width: 850px; height: 520px; overflow: hidden">
+                <img src="{{ asset('img/profil-unhan.png') }}" width="850" height="520" alt="Example Image" loading="lazy" >
+            </div>
+            <div style="width: 78vw;margin-top: 10px;font-size: 15px;">
+                <br /><br />
+                <p style="font-size: 15px">
+                    Universitas Pertahanan Indonesia (Unhan) atau Indonesia Defense University (IDU) ditetapkan melalui Surat Mendiknas Nomor 29/MPN/OT/2009 tanggal 6 Maret 2009 perihal Pendirian Unhan dan diresmikan oleh Presiden Susilo Bambang Yudhoyono pada tanggal 11 maret 2009 di Istana Negara.
+                <br />
+                    Unhan merupakan lembaga pendidikan tinggi yang unik karena mengkhususkan diri pada studi pertahanan setingkat S 2. Unhan adalah lembaga pendidikan tinggi terbuka. Unhan memberi kesempatan bagi para perwira TNI dan sipil untuk belajar dan memperdalam Ilmu Pertahanan dari sudut pandang militer, politik, ekonomi, sosial dan budaya.
+                </p>
+                <p style="font-size: 15px">
+                    (Perpres Nomor 5 Tahun 2011)
+                </p>
+                <p style="font-size: 15px">
+                    Sebagai perguruan tinggi pemerintah, Universitas Pertahanan (Unhan) secara teknis akademik dibina oleh Kementerian Pendidikan dan Kebudayaan atau sekarang Kementerian Riset dan Pendidikan Tinggi (Kemenristek Dikti) dan secara teknis fungsional dibina oleh Kementerian Pertahanan RI (Kemhan RI).
+               <br />
+                    Pembinaan teknis akademik, meliputi penentuan program studi pendidikan, kurikulum program studi, kemahasiswaan, proses belajar mengajar dan wisuda. Sedangkan pembinaan teknis fungsional, meliputi pembinanaan organisasi, pembinaan personel dan dukungan administrasi. Sejak berdiri tahun 2009 hingga saat ini, Unhan sudah menginjak usia ketujuh dan masih tergolong relatif muda untuk ukuran lembaga pendidikan tinggi, dan terlebih baru pertama kali berdiri di Indonesia. Perkembangan Unhan dapat dikatakan relatif pesat, sehingga telah mewadahi Program Doktoral, Magister dan Sarjana.
+                </p>
             </div>
         </div>
     </div>
-    <div style="display: flex; justify-content: center;padding: 30px;gap:20px">
-{{--        <a class="nav-link me-2 font-weight-bold" style="color: white !important;" href="{{ route('informasi-statistik') }}">--}}
-{{--        <div class="boxes" style="background-color:#990000; color:white !important;;width: 280px;min-height: 300px;display: flex; justify-content: center; flex-direction: column;align-items: center;text-align: center;padding: 10px;">--}}
-{{--            <h5 style="color: white !important;">Statistic</h5>--}}
-{{--            <div style="margin: 10px; background-color: white;padding: 10px;">--}}
-{{--            <img src="{{ asset('img/stats.jpg') }}" width="180" alt="Example Image">--}}
-{{--            </div>--}}
-{{--            <h6 style="color: white !important;">Tampilan data statistik</h6><p>Di sini Anda dapat melihat daftar statistik dalam diagram batang/grafik</p>--}}
-{{--        </div>--}}
-{{--        </a>--}}
-        <a class="nav-link me-2 font-weight-bold" style="color: white !important;" href="{{ route('informasi-kerjasama') }}">
-        <div class="boxes" style="background-color:#990000; color:white !important;;width: 280px;min-height: 300px;display: flex; justify-content: center; flex-direction: column;align-items: center;text-align: center;padding: 10px;">
-            <h5 style="color: white !important;">Kerjasama Dalam Negri</h5>
-            <div style="margin: 10px; background-color: white;padding: 10px;">
-                <img src="{{ asset('img/kerjasama-dalam-negri.jpg') }}" width="180" alt="Example Image">
-            </div>
-            <h6 style="color: white !important;">List data kerjasama dalam negri</h6><p>Di sini Anda dapat melihat daftar data dalam list tabel </p>
-        </div>
-        </a>
-        <a class="nav-link me-2 font-weight-bold" style="color: white !important;" href="{{ route('informasi-kerjasama-luar') }}">
-        <div class="boxes"  style="background-color:#990000; color:white !important;;width: 280px;min-height: 300px;display: flex; justify-content: center; flex-direction: column;align-items: center;text-align: center;padding: 10px;">
-            <h5 style="color: white !important;">Kerjasama Luar Negri</h5>
-            <div style="margin: 10px; background-color: white;padding: 10px;">
-                <img src="{{ asset('img/kerjasama-luar-negri.jpg') }}" width="180" alt="Example Image">
-            </div>
-            <h6 style="color: white !important;">List data kerjasama luar negri</h6><p>Di sini Anda dapat melihat daftar data dalam list tabel </p>
-        </div>
-        </a>
 
-    </div>
     @include('layouts.footers.guest.footer')
 @endsection

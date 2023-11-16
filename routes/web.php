@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\InformasiKerjasamaController;
 use App\Http\Controllers\InformasiKerjasamaLuarController;
 use App\Http\Controllers\InformasiStatistikController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\KerjasamaControllerLuarNegri;
 use App\Http\Controllers\KerjasamaLuarNegriControllerOrigin;
 use App\Http\Controllers\MasterController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProsedurController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,8 +36,10 @@ use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\ResetPassword;
 use App\Http\Controllers\ChangePassword;
 
-    Route::get('/', function () {return redirect('/profile');});
+    Route::get('/', function () {return redirect('/beranda');});
+    Route::get('/beranda', [BerandaController::class, 'create'])->name('beranda');
     Route::get('/profile', [ProfileController::class, 'create'])->name('profile');
+    Route::get('/prosedur', [ProsedurController::class, 'create'])->name('prosedur');
     Route::get('/informasi-kerjasama', [InformasiKerjasamaController::class, 'create'])->name('informasi-kerjasama');
     Route::get('/informasi-kerjasama-luar', [InformasiKerjasamaLuarController::class, 'create'])->name('informasi-kerjasama-luar');
     Route::get('/informasi-statistik', [InformasiStatistikController::class, 'create'])->name('informasi-statistik');
