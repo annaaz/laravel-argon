@@ -105,10 +105,10 @@
 
     <div style="display: flex;align-items: center;justify-content:center;margin-top:40px;gap:10px;padding: 20px">
         <div style="width: 80vw; display: flex;justify-content: center;flex-direction:column;align-items: center">
-        <h3 style="font-weight: bold">SISMA</h3>
+        <h3 style="font-weight: bold">SISMAHAN</h3>
             <div style="width: 70vw;margin-top: 10px">
                 <p style="font-size: 20px;text-align: center">
-                    SISMA merupakan sistem informasi kerjasama, yang berfungsi sebagai pusat informasi, komunikasi,
+                    SISMAHAN merupakan sistem informasi kerjasama, yang berfungsi sebagai pusat informasi, komunikasi,
                     dan proses pengusulan yang berkaitan dengan kerjasama baik itu kerjasama luar negeri maupun dalam negeri </p>
             </div>
         </div>

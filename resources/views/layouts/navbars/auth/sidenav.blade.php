@@ -4,11 +4,11 @@
     <div class="sidenav-header">
         <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
             aria-hidden="true" id="iconSidenav"></i>
-                <a  class="navbar-brand m-0" href="/docs/bootstrap/overview/argon-dashboard/index.html" target="_blank"
+                <a  class="navbar-brand m-0"  href="{{route('beranda')}}" target="_blank"
 {{--        <a class="navbar-brand m-0" href="{{ route('dashboard') }}"--}}
             target="_blank">
             <img src=" {{ asset('img/unhan-sm.png') }}" class="navbar-brand-img h-100" alt="main_logo">
-            <span style="color:rgb(153, 0, 0);font-size: 12px; font-weight: bold">[ SISMA ]</span>
+            <span style="color:rgb(153, 0, 0);font-size: 12px; font-weight: bold">[ SISMAHAN ]</span>
             <span class="ms-1 font-weight-bold">Dashboard Panel </span>
         </a>
     </div>

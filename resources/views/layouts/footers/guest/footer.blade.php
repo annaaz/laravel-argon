@@ -1,6 +1,6 @@
 <div style="display:flex;font-size:12px;font-weight:bold;width: 100vw; height: 300px; background-color: #990000; bottom:0;padding-left:90px;padding-top: 30px;">
     <div class="text-white position-relative">
-            SISMA | SISTEM INFORMASI KERJASAMA <br />
+            SISMAHAN | SISTEM INFORMASI KERJASAMA <br />
             <span>UNIVERSITAS PERTAHANAN RI</span> <br />
         Kawasan IPSC Sentul, Kabupaten Bogor, Jawa Barat, 16810 (Kampus Utama)<br />
         Jl. Salemba Raya No.14 Jakarta Pusat, DKI Jakarta 10430 (Kampus Satelit) <br />

@@ -123,7 +123,7 @@
                                     <img src="{{ asset('img/unhan-sm.png') }}" width="180" alt="Example Image">
                                 </div>
                                 <h4 class="mt-5 text-white font-weight-bolder position-relative">
-                                    SISMA  <br />
+                                    SISMAHAN  <br />
                                     <small>SISTEM INFORMASI KERJASAMA </small>
                                 </h4>
                                 <p class="text-white position-relative">Universitas Pertahanan Republik Indonesia</p>

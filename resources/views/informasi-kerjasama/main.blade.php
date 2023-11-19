@@ -23,7 +23,7 @@
         <h4 style="font-weight: bold">INFORMASI KERJASAMA</h4>
             <div style="width: 70vw;margin-top: 10px">
                 <p style="font-size: 15px;text-align: center">
-                    SISMA merupakan sistem informasi kerjasama, yang berfungsi sebagai pusat informasi, komunikasi,
+                    SISMAHAN merupakan sistem informasi kerjasama, yang berfungsi sebagai pusat informasi, komunikasi,
                     dan proses pengusulan yang berkaitan dengan kerjasama baik itu kerjasama luar negeri maupun dalam negeri  </p>
             </div>
         </div>
@@ -163,9 +163,7 @@
                                     Tempat</th>
                                 <th class="text-uppercase text-xxs font-weight-bolder">
                                     Tahun TTD</th>
-                                <th
-                                    class="text-center text-uppercase text-xxs font-weight-bolder">
-                                </th>
+
                                 <th rowspan="2"
                                     class="text-center text-uppercase text-xxs font-weight-bolder">
                                     Press Release</th>
@@ -178,9 +176,7 @@
                                     Tanggal</th>
                                 <th class="text-uppercase text-xxs font-weight-bolder ">
                                     Tahun Berakhir</th>
-                                <th
-                                    class="text-center text-uppercase text-xxs font-weight-bolder ">
-                                    File Dokumen</th>
+
                             </tr>
                             </thead>
 
@@ -222,22 +218,11 @@
                                         {{$value->tahun_berakhir}}
 
                                     </td>
-                                    <td>
-                                        @php
-                                            $filePath = $value->file; // Replace with the actual file path
-                                        @endphp
-                                        @if ($filePath && Storage::disk('public')->exists($filePath))
-                                            <a href="{{ asset('storage/'.$value->file) }}" style="font-weight: bold" target="_blank">
-                                                <i class="ni ni-folder-17 text-dark text-sm opacity-10"></i>
-                                                File</a>
-                                        @else
-                                            <small>[ Tidak ada Dokumen ] </small>
-                                        @endif
-                                    </td>
+
 
                                     <td style="text-align: center">
                                         @if (!empty($value->link))
-                                            <a href="{{ $value->link }}" target="_blank">Link {{ $value->link }}</a>
+                                            <a href="{{ $value->link }}" target="_blank">Link </a>
                                         @endif
                                     </td>
 

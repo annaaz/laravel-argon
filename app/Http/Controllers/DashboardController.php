@@ -64,7 +64,7 @@ class DashboardController extends Controller
             $allmonth_DN[$i] =  isset($data_monthly_DN[$i])?$data_monthly_DN[$i]:0;
         }
         $implode_arr_allmonth_DN = implode(',',$allmonth_DN);
-        
+
         $mitraList = Kerjasama::select('instansi')
             ->groupBy('instansi')
             ->orderByRaw('COUNT(*) ASC')
@@ -105,6 +105,7 @@ class DashboardController extends Controller
             $kl++;
         }
         $kerjasama_data_lama = implode(', ', $arr_lama);
+
         return view('pages.dashboard', compact('kerjasama_data_baru','kerjasama_data_lama','data_kategori','implode_arr_allmonth_LN','implode_arr_allmonth_DN','label_mitra'));
     }
 }

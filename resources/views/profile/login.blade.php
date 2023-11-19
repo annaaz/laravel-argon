@@ -123,7 +123,7 @@
                                     <img src="{{ asset('img/unhan-sm.png') }}" width="180" alt="Example Image">
                                 </div>
 
-                                <h4 class="mt-5 text-white font-weight-bolder position-relative"> SISMA  <br /> "Attention is the new
+                                <h4 class="mt-5 text-white font-weight-bolder position-relative"> SISMAHAN  <br /> "Attention is the new
                                     currency"</h4>
                                 <p class="text-white position-relative">The more effortless the writing looks, the more
                                     effort the writer actually put into the process.</p>

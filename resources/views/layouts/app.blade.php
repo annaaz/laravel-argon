@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-icon.png">
     <link rel="icon" type="image/png" href="/img/unhan-sm.png">
     <title>
-        SISMA  | Sistem Informasi Kerjasama
+        SISMAHAN  | Sistem Informasi Kerjasama
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -28,7 +28,7 @@
     @endguest
 
     @auth
-        @if (in_array(request()->route()->getName(), ['profile','informasi-statistik','informasi-kerjasama','informasi-kerjasama-luar','sign-in-static', 'sign-up-static', 'login', 'register', 'recover-password', 'rtl', 'virtual-reality']))
+        @if (in_array(request()->route()->getName(), ['beranda','profile','informasi-statistik','informasi-kerjasama','informasi-kerjasama-luar','sign-in-static', 'sign-up-static', 'login', 'register', 'recover-password', 'rtl', 'virtual-reality']))
             @yield('content')
         @else
             @if (!in_array(request()->route()->getName(), ['profile', 'profile-static']))
