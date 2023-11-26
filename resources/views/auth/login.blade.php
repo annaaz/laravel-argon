@@ -83,12 +83,12 @@
                                         @method('post')
                                         <div class="flex flex-col mb-3">
 {{--                                            value="{{ old('email') ?? 'admin@argon.com' }}"--}}
-                                            <input type="email" name="email" class="form-control"  aria-label="Email">
+                                            <input type="email" name="email" class="form-control" placeholder="Masukkan Email"  aria-label="Email">
                                             @error('email') <p class="text-danger text-xs pt-1"> {{$message}} </p>@enderror
                                         </div>
                                         <div class="flex flex-col mb-3">
 {{--                                            value="secret"--}}
-                                            <input type="password" name="password" class="form-control" aria-label="Password"  >
+                                            <input type="password" name="password" class="form-control" placeholder="Masukkan Password" aria-label="Password"  >
                                             @error('password') <p class="text-danger text-xs pt-1"> {{$message}} </p>@enderror
                                         </div>
                                         <div class="form-check form-switch">
